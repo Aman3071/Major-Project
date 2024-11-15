@@ -4,14 +4,15 @@
   <body>
     
     <h3>Create a New Listing</h3>
-    <form method="POST" action="/listings">
+    <form method="POST" action="/listings" novalidate class="needs-validation">
 
       <div class="mb-3 mt-3">
        <label for="title" class="form-label">Title</label>
        <input name="listing[title]" 
        placeholder="Add catchy title" 
        type="text" 
-       class="form-control" />
+       class="form-control" 
+       required />
       </div>
       
       <div class="mb-3">
@@ -19,6 +20,7 @@
         <textarea
         name="listing[description]" 
         class="form-control"
+        required
       ></textarea>
       </div>
       
@@ -29,6 +31,7 @@
         placeholder="enter image URL/Link"
         type="text"
         class="form-control"
+        
       />
       </div>
       
@@ -38,7 +41,8 @@
         <input name="listing[price]" 
         placeholder="1200" 
         type="number" 
-        class="form-control" />
+        class="form-control"
+        required  />
       </div>
       
       <div class="mb-3 col-md-8">
@@ -46,7 +50,8 @@
         <input name="listing[country]"
         placeholder="India" 
         type="text"
-        class="form-control"/>
+        class="form-control"
+        required />
       </div>
     </div>
       
@@ -56,7 +61,8 @@
         name="listing[location]"
         placeholder="Baga, Goa"
         type="text"
-        class="form-control"/>
+        class="form-control"
+        required />
       </div>
       
       
