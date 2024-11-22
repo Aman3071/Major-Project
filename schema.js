@@ -12,3 +12,11 @@ module.exports.listingSchema = Joi.object({
     'image.filename': Joi.string().allow(null, ''),
   }).required(),
 });
+
+
+module.exports.reviewSchema = Joi.object({
+  review: Joi.object({
+    rating: Joi.number().min(1).max(5).required(),  // Rating must be a number between 1 and 5
+    comment: Joi.string().required(),                // Comment must be a non-empty string
+  }).required(),
+});
