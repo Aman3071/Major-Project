@@ -48,8 +48,6 @@ const validateListing = (req, res, next) => {
 };
 
 
-
-
 //Index Route
 app.get("/listings", wrapAsync (async (req, res) => {
   const allListings = await Listing.find({});
@@ -69,7 +67,7 @@ app.get("/listings/:id", wrapAsync (async (req, res) => {
   res.render("listings/show.ejs", { listing });
 }));
 
-//Create Route
+// Create Route
 app.post("/listings", 
   validateListing, 
   wrapAsync (async (req, res, next) => {
@@ -78,12 +76,14 @@ app.post("/listings",
     res.redirect("/listings");
 }));
 
+
 //Edit Route
 app.get("/listings/:id/edit", wrapAsync (async (req, res) => {
   let { id } = req.params;
   const listing = await Listing.findById(id);
   res.render("listings/edit.ejs", { listing });
 }));
+
 
 //Update Route
 app.put("/listings/:id", 
