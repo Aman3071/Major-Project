@@ -23,11 +23,23 @@
           <li class="nav-item">
             <a class="nav-link" href="/listings/new">Add new Listing</a>
           </li>
-         
+        </ul>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <% if(!currUser) { %>
           <li class="nav-item">
-            <a class="nav-link" href="/user/signup">SignUp</a>
+            <a class="nav-link "  href="/signup">Sign Up</a>
           </li>
-         
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Log in</a>
+          </li>
+          <% }  %> <% if(currUser) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Log out</a>
+          </li>
+          <% } %>
         </ul>
       </div>
     </div>

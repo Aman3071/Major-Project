@@ -10,7 +10,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
-
+const {isLoogedIn} = require("./middleware.js");
 
 
 //This part is seprated because of router
@@ -77,6 +77,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req, res, next) => {
   res.locals.success = req.flash("success"); // Set 'success' flash message to res.locals
   res.locals.error = req.flash("error"); // Set 'success' flash message to res.locals
+  res.locals.currUser = req.user;
   next(); // Call next middleware
 });
 
