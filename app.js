@@ -62,7 +62,7 @@ app.use(flash());
 
 app.use((req, res, next) => {
   res.locals.success = req.flash("success"); // Set 'success' flash message to res.locals
-  console.log(res.locals.success); // Log the 'success' value from res.locals
+  res.locals.error = req.flash("error"); // Set 'success' flash message to res.locals
   next(); // Call next middleware
 });
 
