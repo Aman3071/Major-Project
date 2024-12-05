@@ -16,6 +16,10 @@ const reviewSchema = new Schema({
     type: Date,
     default: Date.now, // Automatically set the date to now if not provided
   },
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 module.exports = mongoose.model("Review", reviewSchema);
