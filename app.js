@@ -13,6 +13,8 @@ const User = require("./models/user.js");
 const {isLoogedIn} = require("./middleware.js");
 
 
+
+
 //This part is seprated because of router
 // const {listingSchema, reviewSchema} = require("./schema.js");
 // const Review = require("./models/review.js");
