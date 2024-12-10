@@ -7,13 +7,13 @@ const Review = require("./models/review");
 
 module.exports.isLoggedIn = (req, res, next) => {
     if (!req.isAuthenticated()) {
+        // Store the current URL in session so the user can be redirected back after login
         req.session.redirectUrl = req.originalUrl;
-        req.flash("error", "You must be logged in to create a listing");
-        return res.redirect("/login"); // Use return to prevent further code execution
+        req.flash("error", "You must be logged in first!");
+        return res.redirect("/login"); // Redirect to login page
     }
-    next(); // This will only run if the user is authenticated
+    next();
 };
-
 
 
 module.exports.saveRedirectUrl = (req, res, next) => {
